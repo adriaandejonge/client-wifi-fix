@@ -17,8 +17,8 @@ function doIteration {
 
 for i in {1..50}
 do
-   echo "Do it $i time"
+   echo "Do it: $i"
    doIteration
-   echo "Wait $i time"
+   echo "Wait: $i"
    sleep 1500
 done
