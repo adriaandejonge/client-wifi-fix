@@ -6,16 +6,17 @@ set -e
 #set -u
 
 declare -r LOG_DEFAULT_COLOR="\033[0m"
+declare -r LOG_INFO_COLOR="\033[0m"
 declare -r LOG_ERROR_COLOR="\033[1;31m"
 
 function log {
-  echo "[$(date +"%Y-%m-%d %H:%M:%S %Z")] ${1}";
+  echo "[$(date +"%Y-%m-%d %H:%M:%S %Z")] $@";
 }
 function info {
-  echo -e "$(log $1)";
+  echo -e "${LOG_INFO_COLOR}$(log $@)${LOG_DEFAULT_COLOR}";
 }
 function error {
-  echo -e "${LOG_ERROR_COLOR}$(info $1)${LOG_DEFAULT_COLOR}";
+  echo -e "${LOG_ERROR_COLOR}$(log $@)${LOG_DEFAULT_COLOR}";
 }
 
 # Generic waitFor function
