@@ -58,4 +58,4 @@ function bounceWifi {
 # Check if wifi is connected, bounce otherwise
 hasWifi || bounceWifi
 # Accept terms
-waitFor acceptTerms && error "test"
+waitFor acceptTerms
